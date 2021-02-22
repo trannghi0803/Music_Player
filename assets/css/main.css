@@ -1,0 +1,259 @@
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.player {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+.dashboard {
+  padding: 16px 16px 14px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 480px;
+  border-bottom: 1px solid #ebebeb;
+  z-index: 99999;
+}
+
+/* HEADER */
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h4 {
+  color: var(--primary-color);
+  font-size: 12px;
+}
+
+header h2 {
+  color: var(--text-color);
+  font-size: 20px;
+}
+/* CD */
+.cd {
+  display: flex;
+  margin: auto;
+  width: 200px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+}
+/* CONTROL */
+.control {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 18px 0 8px 0;
+}
+.control .btn {
+  color: #666;
+  padding: 18px;
+  font-size: 18px;
+}
+.control .btn.active {
+  color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+/* .volume-progress {
+  display: inline-block;
+  width: 20px;
+  height: 85px;
+  padding: 0;
+} */
+.volumeBar {
+  height: 20px;
+  margin: 0;
+  transform-origin: -1px -2px;
+  transform: rotate(-90deg);
+  display: none;
+}
+/* .volume::after {
+  content: "";
+  top: -9px;
+  height: 20px;
+  width: 20px;
+  
+  position: absolute;
+} */
+.btn-volume {
+  position: relative;
+  right: 1px;
+  bottom: 0px;
+  width: 56px;
+  height: 60px !important;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 40px;
+  /* padding-top: 5px; */
+  padding-top: 16px;
+  margin-left: 0px;
+  margin-right: 0px;
+  left: 0px;
+  /* padding-left: 0px; */
+}
+.mute {
+  position: absolute;
+  display: none;
+}
+.btn-volume:hover .volumeBar {
+  display: block;
+  /* background-color: red; */
+}
+.volume {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  /* height: 85px; */
+  padding: 0;
+}
+.time-progress {
+  display: flex;
+  align-items: center;
+}
+.timeLeft,
+.timeRight {
+  padding: 0 8px;
+}
+.progress {
+  width: 100%;
+  /* -webkit-appearance: none; */
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.progress::-webkit-slider-thumb {
+  /* -webkit-appearance: none; */
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+/* PLAYLIST */
+.playlist {
+  margin-top: 408px;
+  padding: 12px;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+  background-color: var(--primary-color);
+}
+/* #thumbAnimate {
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.song .author {
+  font-size: 12px;
+  color: #999;
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
+
+/* ================ */
